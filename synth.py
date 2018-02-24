@@ -26,7 +26,7 @@ def play_chord(notes, duration=1, delay=0.05):
     cmd += list(itertools.chain(*zip(['pl'] * len(notes), notes)))
     cmd += ['delay']
     cmd += [str(delay * i) for i in range(len(notes))]
-    cmd += ['remix -', 'fade 0 %f .1' % duration, 'norm -1',
+    cmd += ['remix -', 'fade 0 %f .1' % duration, 'norm -1']
     cmd += ['> /dev/null 2>&1']
     cmd = ' '.join(cmd)
     subprocess.Popen(cmd, shell=True
