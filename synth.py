@@ -1,6 +1,6 @@
-import glob
+# import glob
 import itertools
-import serial
+# import serial
 import subprocess
 import time
 
