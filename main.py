@@ -6,7 +6,7 @@ def parse_strum(ser):
     pass
 
 if __name__ == '__main__':
-    ser = serial.Serial(port='/dev/ttyS0', baudrate=115200, timeout=1)
+    ser = serial.Serial(port='/dev/ttyS0', baudrate=9600, timeout=1)
     print('Connected to ' + ser.name)
 
     # Load classifier
