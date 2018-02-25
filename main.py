@@ -6,11 +6,11 @@ def parse_strum(ser):
     pass
 
 if __name__ == '__main__':
-    ports = glob.glob('/dev/ttyUSB[0-9]*')
-    if len(ports) == 0:
-        print("Device not connected")
+    # ports = glob.glob('/dev/ttyUSB[0-9]*')
+    # if len(ports) == 0:
+    #     print("Device not connected")
 
-    ser = serial.Serial(port=ports[0], baudrate=115200, timeout=1)
+    ser = serial.Serial(port='/dev/ttyS0', baudrate=115200, timeout=1)
     print('Connected to ' + ser.name)
 
     # Load classifier
