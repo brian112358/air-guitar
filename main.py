@@ -3,10 +3,15 @@ import serial
 import synth, chord_classifier
 
 def parse_strum(ser):
-    pass
+    line = ser.readline().replace("\r\n", "")
+    print(line)
+    words = line.split(',')
+    dist, direction = words[0], words[1]
+    flex = map(int, words[2:])
+    return dist, direction, flex
 
 if __name__ == '__main__':
-    ser = serial.Serial(port='/dev/ttyS0', baudrate=9600, timeout=1)
+    ser = serial.serial.Serial(port='/dev/ttyS0', baudrate=9600, timeout=1)
     print('Connected to ' + ser.name)
 
     # Load classifier
